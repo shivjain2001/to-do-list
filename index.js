@@ -39,12 +39,18 @@ function addListItem()
     }
 }
 btnUpdate.addEventListener('click',function(){
+    if(currenInputValue!=="")
+    {
     var firstELement=list.firstElementChild;
     var newListItem=createNewNode();
 
     list.replaceChild(newListItem, firstELement);
     inputBox.value='';
     currenInputValue='';
+    }
+    else{
+        alert("Please enter a valid todo item");
+    }
 });
 btnRemove.addEventListener('click',function(){
     var firstELement=list.firstElementChild;
